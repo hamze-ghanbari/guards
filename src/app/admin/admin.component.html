@@ -1,0 +1,21 @@
+<a [routerLink]="['managepages']" class="btn btn-danger">manage pages</a>
+<a [routerLink]="['manageuser']" class="btn btn-success">manage users</a>
+<br />
+<h1>admin page</h1>
+  
+<form>
+    <div class="mb-3 row">
+        <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input type="text" #email  class="form-control" id="staticEmail" >
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+          <input type="password" #password class="form-control" id="inputPassword">
+        </div>
+      </div>
+      <button type="submit" (click)="onLogin(email.value,password.value,$event)" >LOGIN</button>
+</form>
+<router-outlet></router-outlet>
