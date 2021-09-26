@@ -7,12 +7,11 @@ import { NotauthorizedComponent } from './notauthorized/notauthorized.component'
 import  { AuthGuard } from './auth.guard';
 import { ManagepagesComponent } from './managepages/managepages.component';
 import { ManageuserComponent } from './manageuser/manageuser.component';
-import { AuthchildGuard } from './authchild.guard';
 import { RegisterComponent } from './register/register.component';
 import { DeactivateGuard } from './deactivate.guard';
 const routes: Routes = [
   {path : '' , component : HomeComponent},
-   {path : 'admin' , component : AdminComponent ,  canActivateChild : [ AuthchildGuard] , children :[
+   {path : 'admin' , component : AdminComponent ,  canActivateChild : [ AuthGuard ] , children :[
     {path : 'manageuser', component:ManageuserComponent},
     {path : 'managepages', component : ManagepagesComponent}
   ]},

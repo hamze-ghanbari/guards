@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
-import { AuthchildService } from '../authchild.service';
+
 
 @Component({
   selector: 'app-admin',
@@ -10,7 +10,7 @@ import { AuthchildService } from '../authchild.service';
 })
 export class AdminComponent implements OnInit {
  
-  constructor(private authchildservice : AuthchildService , private router : Router) { }
+  constructor(private authservice : AuthService , private router : Router) { }
 
   ngOnInit(): void {
   }
@@ -18,7 +18,7 @@ export class AdminComponent implements OnInit {
   public onLogin(email : string , password : string , e : Event){
     e.preventDefault();
 if (email === "infogh1000@gmail.com"  &&  password === "123"){
-this.authchildservice.loginchild();
+this.authservice.login();
 }else{
 this.router.navigate(['/admin']);
 }

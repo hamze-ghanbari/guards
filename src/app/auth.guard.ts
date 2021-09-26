@@ -20,5 +20,9 @@ export class AuthGuard implements CanActivate {
        }
      });
   }
-  
+  canActivateChild(
+    childRoute: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    return this.canActivate(childRoute,state);
+  }
 }
